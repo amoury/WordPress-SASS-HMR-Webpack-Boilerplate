@@ -1,4 +1,4 @@
-# Developing Wordpress theme with Webpack, HMR and Browsersync
+# Developing Wordpress theme with Webpack, HMR, SASS, Underscores Theme and Browsersync
 
 The aim of this example is to present a simple workflow of a Wordpress theme development which leverages all goodness of a [Webpack](https://webpack.github.io/) module bundler including with a hot module replacement (HMR) which in combination with [Browsersync](https://www.browsersync.io/) provides a very fast developing experience.
 
@@ -69,7 +69,7 @@ The fonts used in the example is a free font and is downloaded for demo purposes
 
 ### PHP files
 
-This example provides only a few Wordpress template files just to show a typical file and folder structure of a simple WP theme. You are free to extend your theme with new template files according to your needs.
+This example contains [Underscores Starter Theme](https://underscores.me/) which is one of the most popular Barebones starter theme for web development. 
 
 With Browsersync support we're able to see every single change in WP template file in the browser right after the file is saved without page refresh.
 
