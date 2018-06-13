@@ -81,4 +81,5 @@ When your theme is ready to be published, you are entering the build phase. This
 
 This example is forked from this [repo](https://github.com/tadejstanic/wp-hrm-webpack.git)
 which is heavily inspired by this [repo](https://github.com/bionikspoon/webpack-hmr-wordpress)
+
 Thank you Tadej Stanic and @bionikspoon

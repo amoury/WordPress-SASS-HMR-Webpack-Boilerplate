@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  THEME_NAME: 'wp-hrm',
+  THEME_NAME: 'Webpack Theme',
   // Change the PROXY_TARGET as per your MAMP settings eg - 'localhost:8080'
   PROXY_TARGET: 'localhost', 
   HOST: 'localhost',
