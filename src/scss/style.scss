@@ -1,0 +1,10 @@
+@import 'variables/typography';
+
+$primary_color: #d4d4d4;
+
+
+h2 {
+  color: $primary_color;
+  font-size: 1.6em;
+  font-family: $font__orani;
+}

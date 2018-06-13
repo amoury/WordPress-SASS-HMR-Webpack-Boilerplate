@@ -32,11 +32,40 @@ Every time your javascript code is modified, the changes are immediately sent to
 
 ### CSS files
 
-CSS files should be stored in 'src/css' folder. The example doesn't use any css preprocessors like SASS or LESS but instead it 'post process' all css files with [postCSS](http://postcss.org/).
+CSS files should be stored in 'src/css' folder. The example makes use css preprocessor like SASS as well as it 'post process' all css files with [postCSS](http://postcss.org/).
 
 We think this is a better option for handling CSS syntax, because it's faster than any CSS preprocessor and it's more modular which means that you have all freedom to include only those plugins which are needed by your project. Please see the 'postcss.config.js' file to see which postCSS plugins are already included.
 
 The same as we told for Javascript files is also valid for CSS files. Each change in CSS is immediately visible in the browser without any page refresh.
+
+### SCSS files
+
+SCSS files should be stored in 'src/scss' folder. We have included the SASS preprocessor as an option for those who are comfortable using SASS in their projects. 
+
+### Fonts
+
+Font files should be stored in 'src/assets/fonts' folder. Check the 'scss/variables/typography' file for an example on how to include the fonts in your project. 
+
+Once you run 'build', make sure to go to the folder 'build/compiled' and make a small change in the main.css file. You might get 'Failed to find Font' error in your console. This is because of the WordPress relative path issue. To resolve this, simply change
+
+
+``` css
+@font-face {
+  font-family: 'oranienbaumregular';
+  src: url(/assets/fonts/oranienbaum.eot);
+  src: url(/assets/fonts/oranienbaum.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/oranienbaum.woff2) format("woff2"), url(/assets/fonts/oranienbaum.woff) format("woff"), url(/assets/fonts/oranienbaum.ttf) format("truetype"); }
+```
+
+To
+
+``` css
+@font-face {
+  font-family: 'oranienbaumregular';
+  src: url(./assets/fonts/oranienbaum.eot);
+  src: url(./assets/fonts/oranienbaum.eot?#iefix) format("embedded-opentype"), url(./assets/fonts/oranienbaum.woff2) format("woff2"), url(./assets/fonts/oranienbaum.woff) format("woff"), url(./assets/fonts/oranienbaum.ttf) format("truetype"); }
+```
+
+The fonts used in the example is a free font and is downloaded for demo purposes from [dafont](https://www.dafont.com/oranienbaum.font). 
 
 ### PHP files
 
@@ -50,5 +79,6 @@ When your theme is ready to be published, you are entering the build phase. This
 
 ## Credits
 
-This example is heavily inspired by this [repo](https://github.com/bionikspoon/webpack-hmr-wordpress)
-Thank you @bionikspoon
+This example is forked from this [repo](https://github.com/tadejstanic/wp-hrm-webpack.git)
+which is heavily inspired by this [repo](https://github.com/bionikspoon/webpack-hmr-wordpress)
+Thank you Tadej Stanic and @bionikspoon

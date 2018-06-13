@@ -33,6 +33,20 @@ module.exports = {
       {
         test: /\.css$/,
         loader: getCssLoader()
+      },
+      {
+        test: /\.scss$/,
+        use: getScssLoader()
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts/'
+          }
+        }]
       }
     ]
   },
@@ -95,5 +109,23 @@ function getCssLoader() {
     });
   } else {
     return "style-loader!css-loader?importLoaders=1!postcss-loader";
+  }
+}
+
+
+function getScssLoader() {
+  if (ENV === "production") {
+    return ExtractTextPlugin.extract({
+      fallback: "style-loader",
+      use: ['css-loader', 'sass-loader']
+    });
+  } else {
+    return ([{
+      loader: 'style-loader'
+    }, {
+      loader: 'css-loader'
+    }, {
+      loader: 'sass-loader'
+    }]);
   }
 }

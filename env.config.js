@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   THEME_NAME: 'wp-hrm',
-  PROXY_TARGET: 'localhost:8080',
+  // Change the PROXY_TARGET as per your MAMP settings eg - 'localhost:8080'
+  PROXY_TARGET: 'localhost', 
   HOST: 'localhost',
   PORT: 3000,
   PATHS: {
